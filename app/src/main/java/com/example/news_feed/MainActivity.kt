@@ -17,10 +17,13 @@ class MainActivity : AppCompatActivity() {
         val editText: EditText = findViewById(R.id.edit_query)
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = ListItemAdapter(MainActivityModel.newsList)
+        val adapter = ListItemAdapter(MainActivityModel.newsList, this)
         recyclerView.adapter = adapter
+
         searchButton.setOnClickListener{
             MainActivityModel.getNews(editText.text.toString(),recyclerView)
         }
+
+
     }
 }

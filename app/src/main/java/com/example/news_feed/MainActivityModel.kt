@@ -9,10 +9,10 @@ import kotlinx.coroutines.withContext
 
 object MainActivityModel {
 
-    var lastQuery: String? = null
+    private var lastQuery: String? = null
     var nextPage: String? = null
     var newsList: MutableList<News> = mutableListOf()
-    private val apiKey = "pub_35218d3fa074aac48073c0a938de2bdf7eb75"
+    private const val apiKey = "pub_35218d3fa074aac48073c0a938de2bdf7eb75"
 
     fun getNews(query: String,recyclerView: RecyclerView){
         GlobalScope.launch(Dispatchers.Main) {
